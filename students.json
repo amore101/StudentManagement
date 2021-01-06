@@ -1,0 +1,40 @@
+{
+  "students": [
+    {
+      "name": "张三",
+      "password": "44444",
+      "score": 93,
+      "age": 18,
+      "department": "信息学院",
+      "gender": 1,
+      "number": "20210001"
+    },
+    {
+      "name": "王五",
+      "password": "66666",
+      "score": 95,
+      "age": 18,
+      "department": "信息学院",
+      "gender": 1,
+      "number": "20210002"
+    },
+    {
+      "name": "李四",
+      "password": "55555",
+      "score": 94,
+      "age": 18,
+      "department": "信息学院",
+      "gender": 1,
+      "number": "20210003"
+    },
+    {
+      "name": "喻梓",
+      "gender": "0",
+      "age": "18",
+      "password": "77777",
+      "number": "20210004",
+      "score": "99",
+      "department": "计算机学院"
+    }
+  ]
+}

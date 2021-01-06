@@ -1,0 +1,7 @@
+{
+    "admins":[
+        {"username":"张老师","password":"11111"},
+        {"username":"李老师","password":"22222"},
+        {"username":"王老师","password":"33333"}
+    ]
+}
