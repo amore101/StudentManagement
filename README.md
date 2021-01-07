@@ -11,38 +11,38 @@ https://github.com/typicode/lowdb
 The query is async and in that way you can't assign the result in a variable, so render inside the query.
 
 ```
-    var MongoClient = require('mongodb').MongoClient;
-    const { find } = require('./student')
-    var url = "mongodb://localhost:27017/";
-    router.get(`/student/:number`, function(req, res){
-        Student.find(function(err, studentNumber){
-            if(err){
-                return res.status(500).send('Server error.')
-            }
-            let r = [];
-            studentNumber = req.params.number;
-            console.log(studentNumber);
-            MongoClient.connect(url, function(err, db) {
+var MongoClient = require('mongodb').MongoClient;
+const { find } = require('./student')
+var url = "mongodb://localhost:27017/";
+router.get(`/student/:number`, function(req, res){
+    Student.find(function(err, studentNumber){
+        if(err){
+            return res.status(500).send('Server error.')
+        }
+        let r = [];
+        studentNumber = req.params.number;
+        console.log(studentNumber);
+        MongoClient.connect(url, function(err, db) {
+            if (err) throw err;
+            var dbo = db.db("itcast");
+            var query = { number: studentNumber };
+            dbo.collection("students").find(query).toArray(function(err, result) {
                 if (err) throw err;
-                var dbo = db.db("itcast");
-                var query = { number: studentNumber };
-                dbo.collection("students").find(query).toArray(function(err, result) {
-                    if (err) throw err;
-                    result.forEach(function(obj){
-                        let c = {};
-                        for (var key in obj) {
-                            c[key] = obj[key];
-                        }
-                        r.push(c);
-                    })
-                    console.log(r);
-                    res.render('self.html',{
-                        students:r
-                    })
-                });
+                result.forEach(function(obj){
+                    let c = {};
+                    for (var key in obj) {
+                        c[key] = obj[key];
+                    }
+                    r.push(c);
+                })
+                console.log(r);
+                res.render('self.html',{
+                    students:r
+                })
             });
-        })
+        });
     })
+})
 ```
 
 ## tips while coding
