@@ -8,7 +8,7 @@ https://www.mdeditor.tw/pl/2jcX
 https://github.com/typicode/lowdb
 
 ## node.js mongodb query
-The query is async and in that way you can't assign the result in a variable, so render inside the query.
+
 
 (```)
     var MongoClient = require('mongodb').MongoClient;
